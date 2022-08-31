@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Card from "./Card";
 import { DataContext } from "./Context";
 import SearchBar from "./SearchBar";
-function HomeContainer() {
+function CapitalCityContainer() {
   const [allCountries, setAllCountries] = useState([
     {
       name: {
@@ -529,14 +529,14 @@ function HomeContainer() {
   ]);
   const content = useContext(DataContext);
   useEffect(() => setAllCountries(content), [content]);
-  function searchCurrency(searchString) {
+  function searchCapitalCity(searchString) {
     console.log(searchString, content);
     if (searchString == "") setAllCountries(content);
     else
       setAllCountries([
         ...content.filter((item) => {
           try {
-            let tempVar = Object.keys(item.currencies);
+            let tempVar = item.capital;
             console.log(tempVar);
             for (let key of tempVar) {
               if (
@@ -555,8 +555,8 @@ function HomeContainer() {
   return (
     <div class="home-container">
       <SearchBar
-        search={searchCurrency}
-        searchPlaceHolder="Search Currency..."
+        search={searchCapitalCity}
+        searchPlaceHolder="Search Calpital City..."
       />
       <div class="card-container">
         {allCountries !== undefined && allCountries.length != 0 ? (
@@ -571,4 +571,4 @@ function HomeContainer() {
   );
 }
 
-export default React.memo(HomeContainer);
+export default React.memo(CapitalCityContainer);

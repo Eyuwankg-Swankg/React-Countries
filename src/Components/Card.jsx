@@ -1,8 +1,11 @@
 import React from "react";
 
 function Card({ cardItem }) {
+  function openMap(){
+    window.open(cardItem.maps.googleMaps);
+  }
   return (
-    <div class="card">
+    <div class="card" onClick={()=>openMap()}>
       <img src={cardItem["flags"]["png"]} class="card-img" />
       <div class="card-detail">
         <h1>{cardItem.name.common}</h1>
@@ -51,10 +54,10 @@ function Card({ cardItem }) {
           {cardItem.currencies !== undefined ? (
             <li>
               <strong>Languages : </strong>
-              {Object.keys(cardItem.languages).map((language, index) => {
-                if (Object.keys(cardItem.languages).length == index + 1)
-                  return cardItem.languages[language];
-                else return `${cardItem.languages[language]}, `;
+              {Object.values(cardItem.languages).map((language, index) => {
+                if (Object.values(cardItem.languages).length == index + 1)
+                  return language;
+                else return `${language}, `;
               })}
             </li>
           ) : (

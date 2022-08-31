@@ -14,7 +14,7 @@ function Navbar() {
         <Link to="/Language">Language</Link>
       </span>
       <span>
-        <Link to="/Captial_City">Captial City</Link>
+        <Link to="/capital">Captial City</Link>
       </span>
     </div>
   );

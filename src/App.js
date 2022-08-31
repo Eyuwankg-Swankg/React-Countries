@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import HomeContainer from "./Components/HomeContainer";
 import CurrencyContainer from "./Components/CurrencyContainer";
+import CapitalCityContainer from "./Components/CapitalCityContainer";
+import LanguageContainer from "./Components/LanguageContainer";
 import axios from "axios";
 import { DataContext } from "./Components/Context";
 import {
@@ -31,6 +33,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeContainer />} />
             <Route path="/currency" element={<CurrencyContainer />} />
+            <Route path="/Language" element={<LanguageContainer />} />
+            <Route path="/capital" element={<CapitalCityContainer />} />
           </Routes>
         </DataContext.Provider>
       </div>
