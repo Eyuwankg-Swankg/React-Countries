@@ -530,7 +530,16 @@ function HomeContainer() {
   const content = useContext(DataContext);
   useEffect(() => setAllCountries(content), [content]);
   function searchAll(searchString) {
-    
+    if (searchString == "") setAllCountries(content);
+    else
+    setAllCountries([
+        ...content.filter((item) => {
+          return (
+            item.name.common.substring(0, searchString.length).toLowerCase() ==
+            searchString.toLowerCase()
+          );
+        }),
+      ]);
   }
   return (
     <div class="home-container">

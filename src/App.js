@@ -8,7 +8,9 @@ function App() {
   const [content, setContent] = useState([]);
   const baseUrl = "https://restcountries.com/v3.1/all";
   useEffect(() => {
+    console.log("Calling API.....");
     axios.get(baseUrl).then((response) => {
+      
       setContent([...response.data]);
       console.log(response);
     });
