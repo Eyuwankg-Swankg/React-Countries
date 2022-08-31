@@ -22,7 +22,10 @@ body,html{
   border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 .navbar-container span:hover{
-  border-bottom: 2px solid #E94560;
+  border-bottom: 2px solid #FFC4C4;
+}
+.active-tab{
+  border-bottom: 2px solid #E94560 !important;
 }
 .navbar-container span a{
   color: white;

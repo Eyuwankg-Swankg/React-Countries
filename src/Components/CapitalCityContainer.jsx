@@ -530,14 +530,12 @@ function CapitalCityContainer() {
   const content = useContext(DataContext);
   useEffect(() => setAllCountries(content), [content]);
   function searchCapitalCity(searchString) {
-    console.log(searchString, content);
     if (searchString == "") setAllCountries(content);
     else
       setAllCountries([
         ...content.filter((item) => {
           try {
             let tempVar = item.capital;
-            console.log(tempVar);
             for (let key of tempVar) {
               if (
                 key.substring(0, searchString.length).toLowerCase() ==

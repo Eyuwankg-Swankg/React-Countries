@@ -537,7 +537,6 @@ function LanguageContainer() {
         ...content.filter((item) => {
           try {
             let tempVar = Object.values(item.languages);
-            console.log(tempVar);
             for (let key of tempVar) {
               if (
                 key.substring(0, searchString.length).toLowerCase() ==

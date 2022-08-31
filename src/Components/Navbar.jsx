@@ -1,19 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 import { Outlet, Link } from "react-router-dom";
 
 function Navbar() {
+  const [activeTab,setActiveTab]=useState('Country');
+  function changeTab(tabName){
+    setActiveTab(tabName);
+  }
   return (
     <div class="navbar-container">
-      <span>
+      <span className={activeTab=='Country'?'active-tab':''} onClick={()=>changeTab("Country")}>
         <Link to="/">Country</Link>
       </span>
-      <span>
+      <span className={activeTab=='Currency'?'active-tab':''} onClick={()=>changeTab("Currency")}>
         <Link to="/currency">Currency</Link>
       </span>
-      <span>
+      <span className={activeTab=='Language'?'active-tab':''} onClick={()=>changeTab("Language")}>
         <Link to="/Language">Language</Link>
       </span>
-      <span>
+      <span className={activeTab=='Captial'?'active-tab':''} onClick={()=>changeTab("Captial")}>
         <Link to="/capital">Captial City</Link>
       </span>
     </div>
