@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Card from "./Card";
 import { DataContext } from "./Context";
 import SearchBar from "./SearchBar";
@@ -530,20 +530,35 @@ function HomeContainer() {
   const content = useContext(DataContext);
   useEffect(() => setAllCountries(content), [content]);
   function searchCurrency(searchString) {
+    console.log(searchString, content);
     if (searchString == "") setAllCountries(content);
     else
-    setAllCountries([
+      setAllCountries([
         ...content.filter((item) => {
-          return (
-            item.name.common.substring(0, searchString.length).toLowerCase() ==
-            searchString.toLowerCase()
-          );
+          try {
+            let tempVar = Object.keys(item.currencies);
+            console.log(tempVar);
+            for (let key of tempVar) {
+              if (
+                key.substring(0, searchString.length).toLowerCase() ==
+                searchString.toLowerCase()
+              )
+                return true;
+            }
+            return false;
+          } catch {
+            console.log("Heloo");
+            return false;
+          }
         }),
       ]);
   }
   return (
     <div class="home-container">
-      <SearchBar search={searchCurrency} searchPlaceHolder="Search Currency..." />
+      <SearchBar
+        search={searchCurrency}
+        searchPlaceHolder="Search Currency..."
+      />
       <div class="card-container">
         {allCountries !== undefined && allCountries.length != 0 ? (
           allCountries.map((item, index) => (
