@@ -1,5 +1,6 @@
 body,html{
-  /* background:#832937; */
+  background:#77b5ff17;
+  min-height: 100vh;
 }
 
 .navbar-container{
@@ -30,8 +31,17 @@ body,html{
   text-decoration: none;
 }
 
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 50%);
+  justify-content: center;
+  margin-bottom: 60px;
+  gap: 1rem;
+}
+
 .card {
-  width: 30%;
+  width: 45%;
   cursor: pointer;
   background-color: transparent;
   height: 280px;
