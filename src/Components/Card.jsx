@@ -15,11 +15,11 @@ function Card({ cardItem }) {
             })}
           </li>
           <li>
-            <strong>Sub Region:</strong> {cardItem.subregion}
+            <strong>Region : </strong> {cardItem.subregion}
           </li>
           {cardItem.continents.length != 0 ? (
             <li>
-              <strong>Continent:</strong>
+              <strong>Continent : </strong>
               {cardItem.continents.map((continent, index) => {
                 if (cardItem.continents.length == index + 1) return continent;
                 else return `${continent}, `;
@@ -30,17 +30,17 @@ function Card({ cardItem }) {
           )}
           
           <li>
-            <strong>Currency:</strong> 
+            <strong>Currency : </strong> 
             {Object.keys(cardItem.currencies).map((currency, index) => {
                 if (Object.keys(cardItem.currencies).length == index + 1) return currency;
                 else return `${currency}, `;
               })}
           </li>
           <li>
-            <strong>Population:</strong> {cardItem.population}
+            <strong>Population : </strong> {cardItem.population}
           </li>
           <li>
-            <strong>Languages:</strong> 
+            <strong>Languages : </strong> 
             {Object.keys(cardItem.languages).map((language, index) => {
                 if (Object.keys(cardItem.languages).length == index + 1) return cardItem.languages[language];
                 else return `${cardItem.languages[language]}, `;
