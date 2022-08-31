@@ -34,22 +34,25 @@ body,html{
 .card-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 50%);
+  grid-template-columns: repeat(3, 32%);
   justify-content: center;
   margin-bottom: 60px;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .card {
-  width: 45%;
+  width: 87%;
+  margin: 2rem auto;
+  margin-top: 10px;
   cursor: pointer;
   background-color: transparent;
-  height: 280px;
+  height: 265px;
   perspective: 1000px;
   position: relative;
   border-radius: 4px;
-  border:3px solid rgba(0, 0, 0, 0);
+  border:3px double #0F3460;
 }
+
 .card-name {
   left: 5px;
   bottom: 5px;
@@ -63,9 +66,9 @@ body,html{
 }
 
 .card img {
-  border-radius: 4px;
+  border-radius: 2px;
   width: 100%;
-  height: 280px;
+  height: 265px;
   object-fit: cover;
 }
 
@@ -112,6 +115,9 @@ body,html{
   align-items: center;
   padding: 0 20px;
 }
+.card-detail strong{
+  letter-spacing: 0.5px;
+}
 .card:hover{
   border:3px solid #0F3460;
 }
@@ -121,3 +127,43 @@ body,html{
 .card:hover .card-detail{
   height: 100%;
 }
+.no-data{
+  color:#0F3460;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+
+.search-container{
+  width: 100%;
+  margin: 77px 0 77px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-container input {
+  width: 35%;
+  outline: none;
+  border:none;
+  padding: 12px;
+  border-radius: 5px;
+  border:3px solid black;
+}
+.search-container input:hover{
+  border:3px solid #0F3460;
+}
+.search-container input::placeholder{
+  color: black;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+

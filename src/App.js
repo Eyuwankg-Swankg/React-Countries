@@ -1,24 +1,24 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./Components/Navbar"
-import HomeContainer from "./Components/HomeContainer"
-
-
+import { useEffect,useState } from "react";
+import Navbar from "./Components/Navbar";
+import HomeContainer from "./Components/HomeContainer";
+import axios from "axios";
+import { DataContext } from "./Components/Context";
 function App() {
+  const [content, setContent] = useState([]);
+  const baseUrl = "https://restcountries.com/v3.1/all";
+  useEffect(() => {
+    axios.get(baseUrl).then((response) => {
+      setContent([...response.data]);
+      console.log(response);
+    });
+  }, []);
   return (
     <div className="App">
-      <Navbar/>
-      <HomeContainer/>
-      {/* name  
-      capital
-      region
-      subregion
-      continents
-      currencies
-      population
-      languages
-      maps
-      flags */}
+      <DataContext.Provider value={content}>
+        <Navbar />
+        <HomeContainer />
+      </DataContext.Provider>
     </div>
   );
 }
