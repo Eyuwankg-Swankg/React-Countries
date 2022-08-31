@@ -9,15 +9,15 @@ function App() {
     <div className="App">
       <Navbar/>
       <HomeContainer/>
-      {/* name
-      currencies
+      {/* name  
       capital
       region
       subregion
-      languages
-      population
-      maps
       continents
+      currencies
+      population
+      languages
+      maps
       flags */}
     </div>
   );
