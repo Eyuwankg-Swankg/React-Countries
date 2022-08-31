@@ -1,22 +1,20 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div class="navbar-container">
       <span>
-        <a href="">Home</a>
+        <Link to="/">Country</Link>
       </span>
       <span>
-        <a href="">Country</a>
+        <Link to="/currency">Currency</Link>
       </span>
       <span>
-        <a href="">Currency</a>
+        <Link to="/Language">Language</Link>
       </span>
       <span>
-        <a href="">Language</a>
-      </span>
-      <span>
-        <a href="">Captial City</a>
+        <Link to="/Captial_City">Captial City</Link>
       </span>
     </div>
   );
