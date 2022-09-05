@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import { Outlet, Link } from "react-router-dom";
 
 function Navbar() {
@@ -15,7 +15,7 @@ function Navbar() {
         <Link to="/currency">Currency</Link>
       </span>
       <span className={activeTab=='Language'?'active-tab':''} onClick={()=>changeTab("Language")}>
-        <Link to="/Language">Language</Link>
+        <Link to="/language">Language</Link>
       </span>
       <span className={activeTab=='Captial'?'active-tab':''} onClick={()=>changeTab("Captial")}>
         <Link to="/capital">Captial City</Link>

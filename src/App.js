@@ -33,7 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeContainer />} />
             <Route path="/currency" element={<CurrencyContainer />} />
-            <Route path="/Language" element={<LanguageContainer />} />
+            <Route path="/language" element={<LanguageContainer />} />
             <Route path="/capital" element={<CapitalCityContainer />} />
           </Routes>
         </DataContext.Provider>
